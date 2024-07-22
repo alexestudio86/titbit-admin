@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "restaurantes-39761"
-  }
+    "default": "restaurantes-39761",
+    "morita-creativa": "morita-creativa"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
