@@ -15,7 +15,7 @@ export const DishesListEditor = ({setModal}) => {
         </div>
         {dishes.map((dish, index) => (
           <article key={index} className="w3-row w3-white mb-3 px-3 py-1">
-            <div className="w3-col m10">
+            <div className="w3-col m10 s8">
               {/* Summary */}
               <details>
                 <summary className="w3-button w3-block w3-small w3-light-gray w3-left-align text-uppercase">{dish.productName} {dish.variants.length > 0 && `[${dish.variants.length}]`}</summary>
@@ -35,7 +35,7 @@ export const DishesListEditor = ({setModal}) => {
                 }
               </details>
             </div>
-            <div className="w3-rest">
+            <div className="w3-col m2 s4">
               <div className="w3-right-align">
                 <button
                   type="button"

@@ -393,12 +393,12 @@ export function OrdersCreator () {
             </div>
             <div className="w3-row mb-3">
                 {/* COMENTARIOS */}
-                <div className="w3-threequarter">
+                <div className="w3-col m8 s10">
                     <span>Comentarios</span>
                     <textarea className="w3-input w3-border" value={comandas.comments} onChange={e => setComandas({...comandas, comments: e.target.value})} ></textarea>
                 </div>
                 {/* FACTURA */}
-                <div className="w3-rest w3-right">
+                <div className="w3-col m4 s2 w3-right">
                     <div>
                         <label htmlFor='invoice'>Factura</label>
                     </div>
@@ -409,7 +409,7 @@ export function OrdersCreator () {
             </div>
             <hr />
             <div className="w3-row">
-                <div className="w3-third">
+                <div className="w3-col m8 s4">
                     <div>
                         {/* PROGRAMADO */}
                         <label htmlFor='schedule'>Programado</label>
@@ -418,7 +418,7 @@ export function OrdersCreator () {
                         <input className="w3-check" type="checkbox" id="schedule" value={comandas.schedule} onChange={ e => setComandas({...comandas, schedule: !comandas.schedule}) } />
                     </div>
                 </div>
-                <div className={`w3-rest ${!comandas.schedule && 'w3-disabled'}`}>
+                <div className={`w3-col m4 s8 ${!comandas.schedule && 'w3-disabled'}`}>
                     <div>
                         <span>*Horario</span>
                     </div>

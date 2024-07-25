@@ -22,8 +22,6 @@ export function HomeSignInForm ( ) {
                 </div>
             </div>
                 <button type="submit" className="w3-button w-100 w3-teal" onClick={ login } >Login</button>
-                <input className='w3-check' id="remember" type="checkbox"/>
-                <label className="px-2" htmlFor="remember">Resetear</label>
         </form>
     )
 }

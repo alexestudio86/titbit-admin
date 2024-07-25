@@ -103,7 +103,7 @@ export function OrderEditModal( {modal, setModal} ) {
               :
               <form onSubmit={ e => e.preventDefault() }>
                 <header className="w3-container w3-light-gray w3-row py-3">
-                  <div className="w3-col m10">
+                  <div className="w3-col m10 s8">
                     {
                       order.tooltip
                       &&
@@ -129,13 +129,13 @@ export function OrderEditModal( {modal, setModal} ) {
                       }
                     />
                   </div>
-                  <div className="w3-col m2">
+                  <div className="w3-col m2 s4">
                     <div className="w3-row">
                       <div className="w3-col m12 w3-right-align">
                         {/* PROGRAMADO */}
                         <label htmlFor='programado'>Programado</label>
                       </div>
-                      <div className='w3-col m10 px-2'>
+                      <div className='w3-col m10 s9 px-2'>
                         <input
                           className={`w3-input w3-border ${order.schedule && !order.schedule.collect ? 'w3-disabled' : ''}`}
                           type="time"
@@ -143,7 +143,7 @@ export function OrderEditModal( {modal, setModal} ) {
                           onChange={ e => (order.schedule && setOrder( {...order, schedule:{...order.schedule, time: new Date ( new Date( new Date().setHours( parseInt(e.target.value.split(':')[0]) ) ).setMinutes( parseInt(e.target.value.split(':')[1]) ) ) }} )) }
                         />
                       </div>
-                      <div className="w3-col m2 w3-right-align">
+                      <div className="w3-col m2 s3 w3-right-align">
                         <input
                           className="w3-check"
                           type="checkbox"
@@ -163,14 +163,14 @@ export function OrderEditModal( {modal, setModal} ) {
                         !order.details
                         ?//No hay Detalles
                           <>
-                            <div className="w3-col s11">
+                            <div className="w3-col m11">
                               <input
                                 className="w3-white w3-input w3-border w3-disabled"
                                 disabled
                                 type="text"
                               />
                             </div>
-                            <div className="w3-rest">
+                            <div className="w3-col m1">
                               <button
                                 className="w3-btn w3-text-red w-100 w3-disabled"
                                 disabled
@@ -193,7 +193,7 @@ export function OrderEditModal( {modal, setModal} ) {
                                     ?//Empty
                                     <Fragment key={index}>
                                       <h1 className="w3-col m11 w3-large text-uppercase fw-bold p-1">{detail.product}</h1>
-                                      <div className="w3-rest">
+                                      <div className="w3-col m1">
                                         <div className="w3-row" style={{display: "flex",justifyContent: "space-between",}}>
                                           <div className="w3-col s12">
                                             <input
@@ -217,9 +217,9 @@ export function OrderEditModal( {modal, setModal} ) {
                                       <div className="w3-col m12 w3-border-top py-1">
                                         <div className="w3-row">
                                           <h2 className="w3-col m10 w3-medium p-1">{detail.variants[0].name}</h2>
-                                          <div className="w3-rest">
+                                          <div className="w3-col m2">
                                             <div className="w3-row" style={{display: "flex",justifyContent: "space-between",}}>
-                                              <div className="w3-twothird">
+                                              <div className="w3-col m8 s10">
                                                 <input
                                                   className="w3-input w3-border"
                                                   min="1"
@@ -232,7 +232,7 @@ export function OrderEditModal( {modal, setModal} ) {
                                                   }}
                                                 />
                                               </div>
-                                              <div className="w3-third w3-right-align">
+                                              <div className="w3-col m4 s2 w3-right-align">
                                                 <button
                                                   className="w3-button p-1"
                                                   type="button"
@@ -289,7 +289,7 @@ export function OrderEditModal( {modal, setModal} ) {
                                       }
                                     </Fragment>
                                 ://Many Products
-                                  <div className="w3-row w3-light-gray py-1">
+                                  <div className="w3-row w3-light-gray py-1" key={index}>
                                     <div className="w3-col m12 w3-white">
                                       <div className="w3-row">
                                         {
@@ -297,11 +297,11 @@ export function OrderEditModal( {modal, setModal} ) {
                                         ?//Many Products - One Variant
                                           detail.variants[0].name === ''
                                           ?//Empty
-                                          <Fragment key={index}>
+                                          <Fragment>
                                             <h1 className="w3-col m10 w3-large text-uppercase fw-bold p-1">{detail.product}</h1>
-                                            <div className="w3-rest">
+                                            <div className="w3-col m2">
                                               <div className="w3-row" style={{display: "flex",justifyContent: "space-between",}}>
-                                                <div className="w3-twothird">
+                                                <div className="w3-col m8 s10">
                                                   <input
                                                     className="w3-input w3-border"
                                                     min="1"
@@ -314,7 +314,7 @@ export function OrderEditModal( {modal, setModal} ) {
                                                     }}
                                                   />
                                                 </div>
-                                                <div className="w3-third w3-right-align">
+                                                <div className="w3-col m4 s2 w3-right-align">
                                                   <button
                                                     className="w3-button p-1"
                                                     type="button"
@@ -329,9 +329,9 @@ export function OrderEditModal( {modal, setModal} ) {
                                             </div>
                                           </Fragment>
                                           ://No empty
-                                          <Fragment key={index}>
-                                            <h1 className="w3-col m11 w3-large text-uppercase fw-bold p-1">{detail.product}</h1>
-                                            <div className="w3-rest w3-right">
+                                          <Fragment>
+                                            <h1 className="w3-col m11 s10 w3-large text-uppercase fw-bold p-1">{detail.product}</h1>
+                                            <div className="w3-col m1 s2 w3-right">
                                               <button
                                                 className="w3-button p-1"
                                                 type="button"
@@ -345,9 +345,9 @@ export function OrderEditModal( {modal, setModal} ) {
                                             <div className="w3-col m12 w3-border-top py-1">
                                               <div className="w3-row">
                                                 <h2 className="w3-col m10 w3-medium p-1">{detail.variants[0].name}</h2>
-                                                <div className="w3-rest">
+                                                <div className="w3-col m2">
                                                   <div className="w3-row" style={{display: "flex",justifyContent: "space-between",}}>
-                                                    <div className="w3-twothird">
+                                                    <div className="w3-col m8 s10">
                                                       <input
                                                         className="w3-input w3-border"
                                                         min="1"
@@ -360,7 +360,7 @@ export function OrderEditModal( {modal, setModal} ) {
                                                         }}
                                                       />
                                                     </div>
-                                                    <div className="w3-third w3-right-align">
+                                                    <div className="w3-col m4 s2 w3-right-align">
                                                       <button
                                                         className="w3-button p-1"
                                                         type="button"
@@ -377,9 +377,9 @@ export function OrderEditModal( {modal, setModal} ) {
                                             </div>
                                           </Fragment>
                                         ://Many Products - Many Variants
-                                          <Fragment key={index}>
-                                            <h1 className="w3-col m11 w3-large text-uppercase fw-bold p-1">{detail.product}</h1>
-                                            <div className="w3-rest w3-right">
+                                          <Fragment>
+                                            <h1 className="w3-col m11 s10 w3-large text-uppercase fw-bold p-1">{detail.product}</h1>
+                                            <div className="w3-col m1 s2 w3-right">
                                               <button
                                                 className="w3-button p-1"
                                                 type="button"
@@ -397,9 +397,9 @@ export function OrderEditModal( {modal, setModal} ) {
                                                 <div className="w3-col m12 w3-border-top py-1" key={idx}>
                                                   <div className="w3-row">
                                                     <h2 className="w3-col m10 w3-medium p-1">{vrt.name}</h2>
-                                                    <div className="w3-rest">
+                                                    <div className="w3-col m2">
                                                       <div className="w3-row" style={{display: "flex",justifyContent: "space-between",}}>
-                                                        <div className="w3-twothird">
+                                                        <div className="w3-col m8 s10">
                                                           <input
                                                             className="w3-input w3-border"
                                                             min="1"
@@ -412,7 +412,7 @@ export function OrderEditModal( {modal, setModal} ) {
                                                             type="number"
                                                           />
                                                         </div>
-                                                        <div className="w3-third w3-right-align">
+                                                        <div className="w3-col m4 s2 w3-right-align">
                                                           <button
                                                             className="w3-button p-1"
                                                             type="button"
@@ -443,6 +443,7 @@ export function OrderEditModal( {modal, setModal} ) {
                   </div>
                   <div className="-w3-col m12">
                     <div className="w3-row">
+                      {/* Comentarios */}
                       <div className="w3-col m8 w3-padding-small">
                         <label htmlFor="comment">Comentarios</label>
                         <textarea
@@ -454,9 +455,10 @@ export function OrderEditModal( {modal, setModal} ) {
                           }}
                         ></textarea>
                       </div>
-                      <div className="w3-rest">
+                      <div className="w3-col m4">
                         <div className="w3-row">
-                          <div className="w3-col m8 w3-padding-small">
+                          {/* Status */}
+                          <div className="w3-col m8 s10 w3-padding-small">
                             <span className="w3-disabled" disabled>
                               Estatus
                             </span>
@@ -472,7 +474,8 @@ export function OrderEditModal( {modal, setModal} ) {
                                 )}
                             </select>
                           </div>
-                          <div className="w3-rest w3-padding-small">
+                          {/* Factura */}
+                          <div className="w3-col m4 s2 w3-padding-small">
                             <div className="w3-right-align">
                               <label className="w3-disabled" htmlFor="invoice">
                                 Factura

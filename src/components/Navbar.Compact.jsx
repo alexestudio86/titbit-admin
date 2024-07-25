@@ -1,4 +1,4 @@
-export function NavbarCompact ( ) {
+export function NavbarCompact() {
     return (
         <nav className="sticky-top zIndex-2" id="navbarCompact">
             <div className="w3-row w3-large w3-pale-green" >

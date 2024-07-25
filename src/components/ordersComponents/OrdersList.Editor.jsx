@@ -42,7 +42,7 @@ export function OrdersListEditor ({setModal}) {
                 orders.map( (order, index) => (
                     <article key={index} className="w3-white mb-3 px-3 py-1">
                         <div className="w3-row">
-                            <div className="w3-col s3">
+                            <div className="w3-col m3 s4">
                                 {/* Image */}
                                 <img className="w-100" src="/logo-titbit_grayscale.webp" alt="Logo Titbit escala de grises" width="70" height='auto' style={ {height: 70, objectFit: 'cover', objectPosition: 'center', padding: '8 0'}} />
                                 {/* Entrega */}
@@ -56,14 +56,14 @@ export function OrdersListEditor ({setModal}) {
                                 </div>
                                 }
                             </div>
-                            <div className="w3-col s9">
+                            <div className="w3-col m9 s8">
                                 <div className="w3-row">
                                     <div className="w3-col m9">
                                         <div className="w3-row">
-                                            <div className="w3-col s8">
+                                            <div className="w3-col m8 s6">
                                                 <h1 className="w3-large">{order.guestName}</h1>
                                             </div>
-                                            <div className="w3-col s4 w3-center" v-if='order.delivered'>
+                                            <div className="w3-col m4 s6 w3-center" v-if='order.delivered'>
                                                 { Object.entries(order.status).map( ([key, value], idx) => (
                                                     value &&
                                                         <div key={idx} >

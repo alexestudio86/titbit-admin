@@ -101,8 +101,8 @@ export const DishEditModal = ( {modal, setModal} ) => {
                                 {dish.variants &&
                                     dish.variants.map((variant, index) => (
                                     <div key={index} className="w3-row my-1">
-                                        {/* Edit Variant */}
-                                        <div className="w3-col s11">
+                                        {/* Variant Name */}
+                                        <div className="w3-col m11 s10">
                                             <input
                                                 className="w3-input w3-border"
                                                 type="text"
@@ -114,7 +114,7 @@ export const DishEditModal = ( {modal, setModal} ) => {
                                             />
                                         </div>
                                         {/* Remove Variant */}
-                                        <div className="w3-rest">
+                                        <div className="w3-col m1 s2">
                                             <button
                                                 className="w3-button w3-block"
                                                 style={{padding: '2px 0'}}
