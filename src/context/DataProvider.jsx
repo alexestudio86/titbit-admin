@@ -18,7 +18,7 @@ export const OrdersProvider = ( {children} ) => {
         setOrdersLoader(true);
         try {
             //For make a request inside object, you need create index (this can be created pushing in link console), is not necesary short by, 
-            const queryOrders   =   await query(collection(db, "orders"), where("timestamp.created", '>=', dayFiltered));
+            const queryOrders   =   await query(collection(db, "orders"), where("timestamp.created", '>=', dayFiltered), orderBy("timestamp.created", "desc"));
             //const queryOrders   =   await query(collection(db, 'orders'), where('created', '>=', dayFiltered), orderBy('created', 'desc'));
             onSnapshot(queryOrders, (querySnapshot) => {
                 setOrders(
